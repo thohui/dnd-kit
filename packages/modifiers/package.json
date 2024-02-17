@@ -30,7 +30,7 @@
     "tslib": "^2.0.0"
   },
   "peerDependencies": {
-    "@dnd-kit/core": "^6.1.0",
+    "@dnd-kit/core": "^6.0.8",
     "react": ">=16.8.0"
   },
   "devDependencies": {
