@@ -36,11 +36,14 @@ export interface PointerEventHandlers {
   end: EventDescriptor;
 }
 
-export type PointerActivationConstraint = DistanceConstraint | DelayConstraint;
+export type PointerActivationConstraint =
+  | DelayConstraint
+  | DistanceConstraint
+  | (DelayConstraint & DistanceConstraint);
 
 function isDistanceConstraint(
   constraint: PointerActivationConstraint
-): constraint is DistanceConstraint {
+): constraint is PointerActivationConstraint & DistanceConstraint {
   return Boolean(constraint && 'distance' in constraint);
 }
 
@@ -52,10 +55,14 @@ function isDelayConstraint(
 
 export interface AbstractPointerSensorOptions extends SensorOptions {
   activationConstraint?: PointerActivationConstraint;
+  bypassActivationConstraint?(
+    props: Pick<AbstractPointerSensorProps, 'activeNode' | 'event' | 'options'>
+  ): boolean;
   onActivation?({event}: {event: Event}): void;
 }
 
-export type AbstractPointerSensorProps = SensorProps<AbstractPointerSensorOptions>;
+export type AbstractPointerSensorProps =
+  SensorProps<AbstractPointerSensorOptions>;
 
 export class AbstractPointerSensor implements SensorInstance {
   public autoScrollEnabled = true;
@@ -96,7 +103,7 @@ export class AbstractPointerSensor implements SensorInstance {
     const {
       events,
       props: {
-        options: {activationConstraint},
+        options: {activationConstraint, bypassActivationConstraint},
       },
     } = this;
 
@@ -109,8 +116,14 @@ export class AbstractPointerSensor implements SensorInstance {
     this.documentListeners.add(EventName.Keydown, this.handleKeydown);
 
     if (activationConstraint) {
-      if (isDistanceConstraint(activationConstraint)) {
-        return;
+      if (
+        bypassActivationConstraint?.({
+          event: this.props.event,
+          activeNode: this.props.activeNode,
+          options: this.props.options,
+        })
+      ) {
+        return this.handleStart();
       }
 
       if (isDelayConstraint(activationConstraint)) {
@@ -118,6 +131,10 @@ export class AbstractPointerSensor implements SensorInstance {
           this.handleStart,
           activationConstraint.delay
         );
+        return;
+      }
+
+      if (isDistanceConstraint(activationConstraint)) {
         return;
       }
     }
@@ -178,16 +195,8 @@ export class AbstractPointerSensor implements SensorInstance {
     const coordinates = getEventCoordinates(event) ?? defaultCoordinates;
     const delta = getCoordinatesDelta(initialCoordinates, coordinates);
 
+    // Constraint validation
     if (!activated && activationConstraint) {
-      // Constraint validation
-      if (isDelayConstraint(activationConstraint)) {
-        if (hasExceededDistance(delta, activationConstraint.tolerance)) {
-          return this.handleCancel();
-        }
-
-        return;
-      }
-
       if (isDistanceConstraint(activationConstraint)) {
         if (
           activationConstraint.tolerance != null &&
@@ -195,12 +204,19 @@ export class AbstractPointerSensor implements SensorInstance {
         ) {
           return this.handleCancel();
         }
+
         if (hasExceededDistance(delta, activationConstraint.distance)) {
           return this.handleStart();
         }
-
-        return;
       }
+
+      if (isDelayConstraint(activationConstraint)) {
+        if (hasExceededDistance(delta, activationConstraint.tolerance)) {
+          return this.handleCancel();
+        }
+      }
+
+      return;
     }
 
     if (event.cancelable) {

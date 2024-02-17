@@ -149,6 +149,21 @@ export const PressDelay = () => (
   />
 );
 
+PressDelay.storyName = 'Press delay';
+
+export const PressDelayOrDistance = () => (
+  <DraggableStory
+    label="Activated dragging 3px or holding 250ms"
+    activationConstraint={{
+      delay: 250,
+      distance: 3,
+      tolerance: 10,
+    }}
+  />
+);
+
+PressDelayOrDistance.storyName = 'Press delay or minimum distance';
+
 export const MinimumDistance = () => (
   <DraggableStory
     label="I'm activated after dragging 15px"
