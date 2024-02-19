@@ -1,5 +1,5 @@
+import {canUseDOM} from '@thohui/dnd-kit-utilities';
 import {useEffect} from 'react';
-import {canUseDOM} from '@dnd-kit/utilities';
 
 import type {SensorDescriptor} from '../../sensors';
 

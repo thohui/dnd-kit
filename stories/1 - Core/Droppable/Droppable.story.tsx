@@ -1,15 +1,15 @@
-import React, {useState} from 'react';
 import {
+  CollisionDetection as CollisionDetectionType,
+  DndContext,
+  Modifiers,
+  UniqueIdentifier,
   closestCenter,
   closestCorners,
-  rectIntersection,
   pointerWithin,
-  DndContext,
+  rectIntersection,
   useDraggable,
-  UniqueIdentifier,
-  CollisionDetection as CollisionDetectionType,
-  Modifiers,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
+import React, {useState} from 'react';
 
 import {
   Draggable,

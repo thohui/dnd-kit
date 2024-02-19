@@ -1,10 +1,10 @@
 import {
+  DroppableContainer,
+  KeyboardCode,
+  KeyboardCoordinateGetter,
   closestCorners,
   getFirstCollision,
-  KeyboardCode,
-  DroppableContainer,
-  KeyboardCoordinateGetter,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 
 const directions: string[] = [
   KeyboardCode.Down,

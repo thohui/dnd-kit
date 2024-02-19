@@ -1,6 +1,6 @@
-import React from 'react';
-import {useDraggable} from '@dnd-kit/core';
+import {useDraggable} from '@thohui/dnd-kit-core';
 import classNames from 'classnames';
+import React from 'react';
 
 import styles from './Switch.module.css';
 

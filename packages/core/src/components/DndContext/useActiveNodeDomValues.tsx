@@ -1,4 +1,4 @@
-import type {DeepRequired} from '@dnd-kit/utilities';
+import type {DeepRequired} from '@thohui/dnd-kit-utilities';
 import {useMemo} from 'react';
 import {useCachedNode, useInitialRect, useRect} from '../../hooks/utilities';
 import type {DraggableNodes} from '../../store';

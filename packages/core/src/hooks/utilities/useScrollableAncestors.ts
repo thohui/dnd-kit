@@ -1,5 +1,5 @@
+import {useLazyMemo} from '@thohui/dnd-kit-utilities';
 import {useEffect, useRef} from 'react';
-import {useLazyMemo} from '@dnd-kit/utilities';
 
 import {getScrollableAncestors} from '../../utilities';
 

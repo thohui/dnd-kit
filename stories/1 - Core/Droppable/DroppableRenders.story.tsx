@@ -1,14 +1,14 @@
-import React, {Profiler, useMemo, useRef, useState} from 'react';
 import {
-  DndContext,
-  useDraggable,
-  UniqueIdentifier,
   CollisionDetection as CollisionDetectionType,
+  DndContext,
   Modifiers,
   MouseSensor,
+  UniqueIdentifier,
+  useDraggable,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
+import React, {Profiler, useMemo, useRef, useState} from 'react';
 
 import {
   Draggable,

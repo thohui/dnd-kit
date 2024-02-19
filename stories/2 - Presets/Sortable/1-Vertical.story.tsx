@@ -1,15 +1,15 @@
-import React from 'react';
-import {MeasuringStrategy, UniqueIdentifier} from '@dnd-kit/core';
-import {restrictToWindowEdges} from '@dnd-kit/modifiers';
+import {MeasuringStrategy, UniqueIdentifier} from '@thohui/dnd-kit-core';
+import {
+  restrictToFirstScrollableAncestor,
+  restrictToVerticalAxis,
+  restrictToWindowEdges,
+} from '@thohui/dnd-kit-modifiers';
 import {
   AnimateLayoutChanges,
   defaultAnimateLayoutChanges,
   verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import {
-  restrictToVerticalAxis,
-  restrictToFirstScrollableAncestor,
-} from '@dnd-kit/modifiers';
+} from '@thohui/dnd-kit-sortable';
+import React from 'react';
 
 import {createRange} from '../../utilities';
 import {Sortable, Props as SortableProps} from './Sortable';

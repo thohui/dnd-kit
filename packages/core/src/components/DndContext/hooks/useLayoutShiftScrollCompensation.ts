@@ -1,10 +1,10 @@
+import {useIsomorphicLayoutEffect} from '@thohui/dnd-kit-utilities';
 import {useRef} from 'react';
-import {useIsomorphicLayoutEffect} from '@dnd-kit/utilities';
 
+import type {DraggableNode} from '../../../store';
+import type {ClientRect} from '../../../types';
 import {getRectDelta} from '../../../utilities/rect';
 import {getFirstScrollableAncestor} from '../../../utilities/scroll';
-import type {ClientRect} from '../../../types';
-import type {DraggableNode} from '../../../store';
 import type {MeasuringFunction} from '../types';
 
 interface Options {

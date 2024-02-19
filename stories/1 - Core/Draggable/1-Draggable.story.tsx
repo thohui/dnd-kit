@@ -9,15 +9,16 @@ import {
   PointerActivationConstraint,
   Modifiers,
   useSensors,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 import {
   createSnapModifier,
   restrictToHorizontalAxis,
   restrictToVerticalAxis,
   restrictToWindowEdges,
   snapCenterToCursor,
-} from '@dnd-kit/modifiers';
-import type {Coordinates} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-modifiers';
+import type {Coordinates} from '@thohui/dnd-kit-utilities';
+import React, {useMemo, useState} from 'react';
 
 import {
   Axis,

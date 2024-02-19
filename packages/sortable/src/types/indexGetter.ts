@@ -1,4 +1,4 @@
-import type {UniqueIdentifier} from '@dnd-kit/core';
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
 
 export interface NewIndexGetterArguments {
   id: UniqueIdentifier;

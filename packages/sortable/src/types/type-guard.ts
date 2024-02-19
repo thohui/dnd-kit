@@ -1,10 +1,10 @@
 import type {
   Active,
   Data,
-  DroppableContainer,
   DraggableNode,
+  DroppableContainer,
   Over,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 
 import type {SortableData} from './data';
 

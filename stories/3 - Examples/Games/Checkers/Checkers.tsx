@@ -1,12 +1,13 @@
-import React, {useCallback, useMemo, useState} from 'react';
-import {AnimateSharedLayout} from 'framer-motion';
 import {
   DndContext,
-  useDraggable,
   DragEndEvent,
-  DragStartEvent,
   DragOverlay,
-} from '@dnd-kit/core';
+  DragStartEvent,
+  useDraggable,
+} from '@thohui/dnd-kit-core';
+import {AnimateSharedLayout} from 'framer-motion';
+import React, {useCallback, useMemo, useState} from 'react';
+import styles from './Checkers.module.css';
 import {
   Board,
   Cell,
@@ -16,7 +17,6 @@ import {
   PieceProps,
   Score,
 } from './components';
-import styles from './Checkers.module.css';
 
 const BOARD_SIZE = 8;
 
@@ -323,9 +323,10 @@ function generatePieces(board: CellProps[][]) {
   return pieces;
 }
 
-function checkEnd(
-  pieces: (PieceProps | undefined)[][]
-): {oddWon: boolean; evenWon: boolean} {
+function checkEnd(pieces: (PieceProps | undefined)[][]): {
+  oddWon: boolean;
+  evenWon: boolean;
+} {
   const result = {oddWon: true, evenWon: true};
 
   for (let y = 0; y < BOARD_SIZE; y++) {

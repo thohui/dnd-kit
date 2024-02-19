@@ -4,29 +4,29 @@ import {
   getOwnerDocument,
   getWindow,
   isKeyboardEvent,
-} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-utilities';
 
 import type {Coordinates} from '../../types';
 import {
   defaultCoordinates,
-  getScrollPosition,
   getScrollElementRect,
+  getScrollPosition,
 } from '../../utilities';
 import {scrollIntoViewIfNeeded} from '../../utilities/scroll';
 import {EventName} from '../events';
-import {Listeners} from '../utilities';
 import type {
   Activators,
   SensorInstance,
-  SensorProps,
   SensorOptions,
+  SensorProps,
 } from '../types';
+import {Listeners} from '../utilities';
 
-import {KeyboardCoordinateGetter, KeyboardCode, KeyboardCodes} from './types';
 import {
   defaultKeyboardCodes,
   defaultKeyboardCoordinateGetter,
 } from './defaults';
+import {KeyboardCode, KeyboardCodes, KeyboardCoordinateGetter} from './types';
 
 export interface KeyboardSensorOptions extends SensorOptions {
   keyboardCodes?: KeyboardCodes;

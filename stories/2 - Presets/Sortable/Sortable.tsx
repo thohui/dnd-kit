@@ -4,39 +4,39 @@ import {createPortal} from 'react-dom';
 import {
   Active,
   Announcements,
-  closestCenter,
   CollisionDetection,
-  DragOverlay,
   DndContext,
+  DragOverlay,
   DropAnimation,
-  KeyboardSensor,
   KeyboardCoordinateGetter,
+  KeyboardSensor,
+  MeasuringConfiguration,
   Modifiers,
   MouseSensor,
-  MeasuringConfiguration,
   PointerActivationConstraint,
   ScreenReaderInstructions,
   TouchSensor,
   UniqueIdentifier,
+  closestCenter,
+  defaultDropAnimationSideEffects,
+  useConditionalDndContext,
+  useDndContext,
   useSensor,
   useSensors,
-  defaultDropAnimationSideEffects,
-  useDndContext,
-  useConditionalDndContext,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 import {
-  arrayMove,
-  useSortable,
-  SortableContext,
-  sortableKeyboardCoordinates,
-  SortingStrategy,
-  rectSortingStrategy,
   AnimateLayoutChanges,
   NewIndexGetter,
-} from '@dnd-kit/sortable';
+  SortableContext,
+  SortingStrategy,
+  arrayMove,
+  rectSortingStrategy,
+  sortableKeyboardCoordinates,
+  useSortable,
+} from '@thohui/dnd-kit-sortable';
 
-import {createRange} from '../../utilities';
 import {Item, List, Wrapper} from '../../components';
+import {createRange} from '../../utilities';
 
 export interface Props {
   activationConstraint?: PointerActivationConstraint;

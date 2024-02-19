@@ -1,5 +1,5 @@
+import {useEvent} from '@thohui/dnd-kit-utilities';
 import {useEffect, useMemo} from 'react';
-import {useEvent} from '@dnd-kit/utilities';
 
 interface Arguments {
   callback: ResizeObserverCallback;

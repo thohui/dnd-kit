@@ -1,4 +1,3 @@
-import React, {useState} from 'react';
 import {
   DndContext,
   DragEndEvent,
@@ -8,18 +7,19 @@ import {
   PointerSensor,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 import {
   restrictToHorizontalAxis,
   restrictToParentElement,
-} from '@dnd-kit/modifiers';
+} from '@thohui/dnd-kit-modifiers';
 import classNames from 'classnames';
+import React, {useState} from 'react';
 
+import type {UniqueIdentifier} from 'packages/core/dist';
 import {State} from './constants';
+import styles from './Switch.module.css';
 import {Thumb} from './Thumb';
 import {Track} from './Track';
-import styles from './Switch.module.css';
-import type {UniqueIdentifier} from 'packages/core/dist';
 
 export interface Props {
   accessibilityLabel?: string;

@@ -1,6 +1,6 @@
-import type {FirstArgument, Transform} from '@dnd-kit/utilities';
+import type {FirstArgument, Transform} from '@thohui/dnd-kit-utilities';
 
-import type {Modifiers, Modifier} from './types';
+import type {Modifier, Modifiers} from './types';
 
 export function applyModifiers(
   modifiers: Modifiers | undefined,

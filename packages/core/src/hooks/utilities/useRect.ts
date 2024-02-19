@@ -1,5 +1,5 @@
+import {useIsomorphicLayoutEffect} from '@thohui/dnd-kit-utilities';
 import {useReducer} from 'react';
-import {useIsomorphicLayoutEffect} from '@dnd-kit/utilities';
 
 import type {ClientRect} from '../../types';
 import {getClientRect, Rect} from '../../utilities';

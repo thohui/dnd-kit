@@ -1,14 +1,18 @@
+import {
+  SortableContext,
+  arrayMove,
+  useSortable,
+} from '@thohui/dnd-kit-sortable';
 import React, {Profiler, useRef, useState} from 'react';
-import {arrayMove, SortableContext, useSortable} from '@dnd-kit/sortable';
 
-import {Container, Item, Wrapper} from '../../components';
 import {
   DndContext,
   MouseSensor,
   UniqueIdentifier,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
+import {Container, Item, Wrapper} from '../../components';
 import {createRange} from '../../utilities';
 
 export default {

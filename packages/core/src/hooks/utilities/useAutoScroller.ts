@@ -1,9 +1,9 @@
+import {useInterval, useLazyMemo, usePrevious} from '@thohui/dnd-kit-utilities';
 import {useCallback, useEffect, useMemo, useRef} from 'react';
-import {useInterval, useLazyMemo, usePrevious} from '@dnd-kit/utilities';
 
-import {getScrollDirectionAndSpeed} from '../../utilities';
+import type {ClientRect, Coordinates} from '../../types';
 import {Direction} from '../../types';
-import type {Coordinates, ClientRect} from '../../types';
+import {getScrollDirectionAndSpeed} from '../../utilities';
 
 export type ScrollAncestorSortingFn = (ancestors: Element[]) => Element[];
 

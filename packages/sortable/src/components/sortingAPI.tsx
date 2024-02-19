@@ -1,8 +1,8 @@
 import type {
-  UniqueIdentifier,
-  DndContextDescriptor,
   ClientRect,
-} from '@dnd-kit/core';
+  DndContextDescriptor,
+  UniqueIdentifier,
+} from '@thohui/dnd-kit-core';
 import {useSyncExternalStore} from 'use-sync-external-store/shim';
 import {defaultNewIndexGetter} from '../hooks/defaults';
 import type {SortingStrategy} from '../types';

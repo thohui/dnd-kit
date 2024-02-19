@@ -1,5 +1,5 @@
-import type {UniqueIdentifier} from '@dnd-kit/core';
-import {useRef, useEffect} from 'react';
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
+import {useEffect, useRef} from 'react';
 
 export function useGlobalActiveRef(activeId: UniqueIdentifier | null) {
   const activeState = useRef<{

@@ -1,5 +1,5 @@
-import type {UniqueIdentifier} from '@dnd-kit/core';
-import {arrayMove} from '@dnd-kit/sortable';
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
+import {arrayMove} from '@thohui/dnd-kit-sortable';
 
 import type {FlattenedItem, TreeItem, TreeItems} from './types';
 

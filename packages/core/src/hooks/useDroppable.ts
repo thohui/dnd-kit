@@ -1,12 +1,12 @@
-import {useCallback, useContext, useEffect, useRef} from 'react';
 import {
   useIsomorphicLayoutEffect,
   useLatestValue,
   useNodeRef,
   useUniqueId,
-} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-utilities';
+import {useCallback, useContext, useEffect, useRef} from 'react';
 
-import {InternalContext, Action, Data} from '../store';
+import {Action, Data, InternalContext} from '../store';
 import type {ClientRect, UniqueIdentifier} from '../types';
 
 import {useResizeObserver} from './utilities';

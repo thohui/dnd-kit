@@ -1,9 +1,9 @@
+import {useLatestValue, useLazyMemo} from '@thohui/dnd-kit-utilities';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import {useLatestValue, useLazyMemo} from '@dnd-kit/utilities';
 
-import {Rect} from '../../utilities/rect';
 import type {DroppableContainer, RectMap} from '../../store/types';
 import type {ClientRect, UniqueIdentifier} from '../../types';
+import {Rect} from '../../utilities/rect';
 
 interface Arguments {
   dragging: boolean;

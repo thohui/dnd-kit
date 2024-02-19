@@ -1,17 +1,17 @@
-import React, {Profiler, useMemo, useRef, useState} from 'react';
 import {
   DndContext,
+  KeyboardSensor,
+  Modifiers,
+  MouseSensor,
+  PointerActivationConstraint,
+  TouchSensor,
   useDraggable,
   useSensor,
-  MouseSensor,
-  TouchSensor,
-  KeyboardSensor,
-  PointerActivationConstraint,
-  Modifiers,
   useSensors,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
+import React, {Profiler, useMemo, useRef, useState} from 'react';
 
-import type {Coordinates} from '@dnd-kit/utilities';
+import type {Coordinates} from '@thohui/dnd-kit-utilities';
 
 import {Axis, Draggable, Wrapper} from '../../components';
 

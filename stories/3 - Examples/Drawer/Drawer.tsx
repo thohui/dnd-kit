@@ -1,18 +1,18 @@
-import React, {useRef} from 'react';
 import {
   DndContext,
   DragEndEvent,
   PointerSensor,
   useSensor,
   useSensors,
-} from '@dnd-kit/core';
-import {restrictToVerticalAxis} from '@dnd-kit/modifiers';
+} from '@thohui/dnd-kit-core';
+import {restrictToVerticalAxis} from '@thohui/dnd-kit-modifiers';
+import React, {useRef} from 'react';
 
-import {Region} from './constants';
-import {rubberbandModifier} from './modifiers';
+import styles from './Drawer.module.css';
 import {DropRegions} from './DropRegions';
 import {Sheet} from './Sheet';
-import styles from './Drawer.module.css';
+import {Region} from './constants';
+import {rubberbandModifier} from './modifiers';
 
 export interface Props {
   accessibilityLabel?: string;

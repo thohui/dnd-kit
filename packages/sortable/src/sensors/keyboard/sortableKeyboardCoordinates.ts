@@ -1,12 +1,12 @@
 import {
-  closestCorners,
-  getScrollableAncestors,
-  getFirstCollision,
-  KeyboardCode,
   DroppableContainer,
+  KeyboardCode,
   KeyboardCoordinateGetter,
-} from '@dnd-kit/core';
-import {subtract} from '@dnd-kit/utilities';
+  closestCorners,
+  getFirstCollision,
+  getScrollableAncestors,
+} from '@thohui/dnd-kit-core';
+import {subtract} from '@thohui/dnd-kit-utilities';
 
 import {hasSortableData} from '../../types';
 

@@ -1,4 +1,4 @@
-import type {Transform} from '@dnd-kit/utilities';
+import type {Transform} from '@thohui/dnd-kit-utilities';
 import type {Active, Over} from '../store';
 import type {ClientRect} from '../types';
 

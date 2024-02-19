@@ -1,9 +1,9 @@
-import {useContext, useEffect} from 'react';
 import {
   findFirstFocusableNode,
   isKeyboardEvent,
   usePrevious,
-} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-utilities';
+import {useContext, useEffect} from 'react';
 
 import {InternalContext} from '../../../store';
 

@@ -1,13 +1,20 @@
+import {
+  ClientRect,
+  UniqueIdentifier,
+  useDndContext,
+} from '@thohui/dnd-kit-core';
+import {
+  useIsomorphicLayoutEffect,
+  useUniqueId,
+} from '@thohui/dnd-kit-utilities';
 import React, {useEffect, useMemo, useRef} from 'react';
-import {useDndContext, ClientRect, UniqueIdentifier} from '@dnd-kit/core';
-import {useIsomorphicLayoutEffect, useUniqueId} from '@dnd-kit/utilities';
 
+import {defaultNewIndexGetter} from '../hooks/defaults';
+import {rectSortingStrategy} from '../strategies';
 import type {Disabled, NewIndexGetter, SortingStrategy} from '../types';
 import {normalizeDisabled} from '../utilities';
-import {rectSortingStrategy} from '../strategies';
 import {createSortingAPI} from './sortingAPI';
 import {useGlobalActiveRef} from './useGlobalActiveRef';
-import {defaultNewIndexGetter} from '../hooks/defaults';
 
 export interface Props {
   children: React.ReactNode;

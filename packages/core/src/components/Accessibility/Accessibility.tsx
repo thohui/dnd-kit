@@ -1,15 +1,19 @@
+import {
+  HiddenText,
+  LiveRegion,
+  useAnnouncement,
+} from '@thohui/dnd-kit-accessibility';
+import {useUniqueId} from '@thohui/dnd-kit-utilities';
 import React, {useEffect, useMemo, useState} from 'react';
 import {createPortal} from 'react-dom';
-import {useUniqueId} from '@dnd-kit/utilities';
-import {HiddenText, LiveRegion, useAnnouncement} from '@dnd-kit/accessibility';
 
 import {DndMonitorListener, useDndMonitor} from '../DndMonitor';
 
-import type {Announcements, ScreenReaderInstructions} from './types';
 import {
   defaultAnnouncements,
   defaultScreenReaderInstructions,
 } from './defaults';
+import type {Announcements, ScreenReaderInstructions} from './types';
 
 interface Props {
   announcements?: Announcements;

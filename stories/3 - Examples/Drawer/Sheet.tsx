@@ -1,6 +1,6 @@
-import React from 'react';
+import {useDraggable} from '@thohui/dnd-kit-core';
 import classNames from 'classnames';
-import {useDraggable} from '@dnd-kit/core';
+import React from 'react';
 
 import {Header} from './Header';
 import {MAX_DRAWER_HEIGHT_PERCENT} from './constants';

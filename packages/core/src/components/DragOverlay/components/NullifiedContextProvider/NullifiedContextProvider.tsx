@@ -1,5 +1,5 @@
+import type {Transform} from '@thohui/dnd-kit-utilities';
 import React from 'react';
-import type {Transform} from '@dnd-kit/utilities';
 
 import {InternalContext, defaultInternalContext} from '../../../../store';
 import {ActiveDraggableContext} from '../../../DndContext';

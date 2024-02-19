@@ -1,5 +1,5 @@
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
 import type {MutableRefObject} from 'react';
-import type {UniqueIdentifier} from '@dnd-kit/core';
 
 export interface TreeItem {
   id: UniqueIdentifier;

@@ -1,15 +1,15 @@
-import React from 'react';
-import {MeasuringStrategy} from '@dnd-kit/core';
+import {MeasuringStrategy} from '@thohui/dnd-kit-core';
 import {
-  arraySwap,
   AnimateLayoutChanges,
+  arraySwap,
   defaultAnimateLayoutChanges,
   rectSortingStrategy,
   rectSwappingStrategy,
-} from '@dnd-kit/sortable';
+} from '@thohui/dnd-kit-sortable';
+import React from 'react';
 
-import {Sortable, Props as SortableProps} from './Sortable';
 import {GridContainer} from '../../components';
+import {Sortable, Props as SortableProps} from './Sortable';
 
 export default {
   title: 'Presets/Sortable/Grid',

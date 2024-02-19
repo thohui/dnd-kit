@@ -1,14 +1,14 @@
-import React from 'react';
-import {MeasuringStrategy} from '@dnd-kit/core';
+import {MeasuringStrategy} from '@thohui/dnd-kit-core';
+import {restrictToHorizontalAxis} from '@thohui/dnd-kit-modifiers';
 import {
   AnimateLayoutChanges,
   defaultAnimateLayoutChanges,
   horizontalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import {restrictToHorizontalAxis} from '@dnd-kit/modifiers';
+} from '@thohui/dnd-kit-sortable';
+import React from 'react';
 
-import {createRange} from '../../utilities';
 import {List} from '../../components';
+import {createRange} from '../../utilities';
 import {Sortable, Props as SortableProps} from './Sortable';
 
 export default {

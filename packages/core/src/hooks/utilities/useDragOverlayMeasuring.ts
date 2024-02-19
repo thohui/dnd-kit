@@ -1,10 +1,10 @@
-import {useMemo, useCallback, useState} from 'react';
-import {isHTMLElement, useNodeRef} from '@dnd-kit/utilities';
+import {isHTMLElement, useNodeRef} from '@thohui/dnd-kit-utilities';
+import {useCallback, useMemo, useState} from 'react';
 
-import {useResizeObserver} from './useResizeObserver';
-import {getMeasurableNode} from '../../utilities/nodes';
 import type {PublicContextDescriptor} from '../../store';
 import type {ClientRect} from '../../types';
+import {getMeasurableNode} from '../../utilities/nodes';
+import {useResizeObserver} from './useResizeObserver';
 
 interface Arguments {
   measure(element: HTMLElement): ClientRect;

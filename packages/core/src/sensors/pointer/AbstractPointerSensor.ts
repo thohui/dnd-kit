@@ -3,18 +3,18 @@ import {
   getEventCoordinates,
   getOwnerDocument,
   getWindow,
-} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-utilities';
 
+import type {Coordinates, DistanceMeasurement} from '../../types';
 import {defaultCoordinates} from '../../utilities';
+import {EventName, preventDefault, stopPropagation} from '../events';
+import {KeyboardCode} from '../keyboard';
+import type {SensorInstance, SensorOptions, SensorProps} from '../types';
 import {
   getEventListenerTarget,
   hasExceededDistance,
   Listeners,
 } from '../utilities';
-import {EventName, preventDefault, stopPropagation} from '../events';
-import {KeyboardCode} from '../keyboard';
-import type {SensorInstance, SensorProps, SensorOptions} from '../types';
-import type {Coordinates, DistanceMeasurement} from '../../types';
 
 interface DistanceConstraint {
   distance: DistanceMeasurement;
@@ -55,7 +55,8 @@ export interface AbstractPointerSensorOptions extends SensorOptions {
   onActivation?({event}: {event: Event}): void;
 }
 
-export type AbstractPointerSensorProps = SensorProps<AbstractPointerSensorOptions>;
+export type AbstractPointerSensorProps =
+  SensorProps<AbstractPointerSensorOptions>;
 
 export class AbstractPointerSensor implements SensorInstance {
   public autoScrollEnabled = true;

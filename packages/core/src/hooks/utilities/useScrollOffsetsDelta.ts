@@ -1,5 +1,5 @@
+import {Coordinates, subtract} from '@thohui/dnd-kit-utilities';
 import {useEffect, useRef} from 'react';
-import {Coordinates, subtract} from '@dnd-kit/utilities';
 
 import {defaultCoordinates} from '../../utilities';
 

@@ -1,10 +1,10 @@
+import {CSS, isKeyboardEvent} from '@thohui/dnd-kit-utilities';
 import React, {forwardRef} from 'react';
-import {CSS, isKeyboardEvent} from '@dnd-kit/utilities';
 
-import type {Transform} from '@dnd-kit/utilities';
+import type {Transform} from '@thohui/dnd-kit-utilities';
 
-import {getRelativeTransformOrigin} from '../../../../utilities';
 import type {ClientRect, UniqueIdentifier} from '../../../../types';
+import {getRelativeTransformOrigin} from '../../../../utilities';
 
 type TransitionGetter = (
   activatorEvent: Event | null

@@ -1,6 +1,6 @@
-import React from 'react';
+import {useDroppable} from '@thohui/dnd-kit-core';
 import classNames from 'classnames';
-import {useDroppable} from '@dnd-kit/core';
+import React from 'react';
 
 import styles from './Cell.module.css';
 

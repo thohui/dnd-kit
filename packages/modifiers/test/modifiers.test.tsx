@@ -1,9 +1,9 @@
-import type {Modifier, ClientRect} from '@dnd-kit/core';
-import type {FirstArgument, Transform} from '@dnd-kit/utilities';
+import type {ClientRect, Modifier} from '@thohui/dnd-kit-core';
+import type {FirstArgument, Transform} from '@thohui/dnd-kit-utilities';
 
 import {restrictToHorizontalAxis, restrictToVerticalAxis} from '../src';
 
-describe('@dnd-kit/modifiers', () => {
+describe('@thohui/dnd-kit-modifiers', () => {
   const defaultRect: ClientRect = {
     left: 0,
     right: 0,

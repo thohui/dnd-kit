@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
 import {
-  verticalListSortingStrategy,
   rectSortingStrategy,
-} from '@dnd-kit/sortable';
+  verticalListSortingStrategy,
+} from '@thohui/dnd-kit-sortable';
+import React, {useEffect, useState} from 'react';
 
-import {Sortable} from '../../../2 - Presets/Sortable/Sortable';
 import {MultipleContainers} from '../../../2 - Presets/Sortable/MultipleContainers';
+import {Sortable} from '../../../2 - Presets/Sortable/Sortable';
 import {PlayingCard, getDeckOfCards} from './PlayingCard';
 
 export default {

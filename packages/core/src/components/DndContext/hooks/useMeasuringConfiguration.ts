@@ -1,5 +1,5 @@
+import type {DeepRequired} from '@thohui/dnd-kit-utilities';
 import {useMemo} from 'react';
-import type {DeepRequired} from '@dnd-kit/utilities';
 
 import {defaultMeasuringConfiguration} from '../defaults';
 import type {MeasuringConfiguration} from '../types';

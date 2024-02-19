@@ -1,16 +1,15 @@
-import 'react-app-polyfill/ie11';
-import * as React from 'react';
-import {useMemo, useState} from 'react';
-import * as ReactDOM from 'react-dom';
-
 import {
   DndContext,
+  DragEndEvent,
+  UniqueIdentifier,
   useDraggable,
   useDroppable,
-  UniqueIdentifier,
-  DragEndEvent,
-} from '@dnd-kit/core';
-import {CSS} from '@dnd-kit/utilities';
+} from '@thohui/dnd-kit-core';
+import {CSS} from '@thohui/dnd-kit-utilities';
+import * as React from 'react';
+import {useState} from 'react';
+import 'react-app-polyfill/ie11';
+import * as ReactDOM from 'react-dom';
 
 const Playground = () => {
   const containers = ['A', 'B', 'C'];
@@ -40,15 +39,10 @@ const Playground = () => {
 };
 
 function Draggable() {
-  const {
-    attributes,
-    isDragging,
-    transform,
-    setNodeRef,
-    listeners,
-  } = useDraggable({
-    id: 'draggable-item',
-  });
+  const {attributes, isDragging, transform, setNodeRef, listeners} =
+    useDraggable({
+      id: 'draggable-item',
+    });
 
   return (
     <button

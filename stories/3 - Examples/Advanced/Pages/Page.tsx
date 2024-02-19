@@ -1,6 +1,6 @@
-import React, {forwardRef, HTMLAttributes} from 'react';
-import type {UniqueIdentifier} from '@dnd-kit/core';
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
 import classNames from 'classnames';
+import React, {forwardRef, HTMLAttributes} from 'react';
 
 import {removeIcon} from './icons';
 import styles from './Page.module.css';

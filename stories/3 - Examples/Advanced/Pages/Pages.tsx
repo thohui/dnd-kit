@@ -1,41 +1,41 @@
-import React, {useState} from 'react';
-import {
-  closestCenter,
-  DndContext,
-  DragOverlay,
-  useSensor,
-  useSensors,
-  PointerSensor,
-  KeyboardSensor,
-  useDndContext,
-  MeasuringStrategy,
-  DropAnimation,
-  defaultDropAnimationSideEffects,
-} from '@dnd-kit/core';
 import type {
-  DragStartEvent,
   DragEndEvent,
+  DragStartEvent,
   MeasuringConfiguration,
   UniqueIdentifier,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 import {
-  arrayMove,
-  useSortable,
-  SortableContext,
-  sortableKeyboardCoordinates,
-  SortingStrategy,
+  DndContext,
+  DragOverlay,
+  DropAnimation,
+  KeyboardSensor,
+  MeasuringStrategy,
+  PointerSensor,
+  closestCenter,
+  defaultDropAnimationSideEffects,
+  useDndContext,
+  useSensor,
+  useSensors,
+} from '@thohui/dnd-kit-core';
+import {
   AnimateLayoutChanges,
-} from '@dnd-kit/sortable';
-import {CSS, isKeyboardEvent} from '@dnd-kit/utilities';
+  SortableContext,
+  SortingStrategy,
+  arrayMove,
+  sortableKeyboardCoordinates,
+  useSortable,
+} from '@thohui/dnd-kit-sortable';
+import {CSS, isKeyboardEvent} from '@thohui/dnd-kit-utilities';
 import classNames from 'classnames';
+import React, {useState} from 'react';
 
 import {createRange} from '../../../utilities';
 
-import {Page, Layout, Position} from './Page';
-import type {Props as PageProps} from './Page';
-import styles from './Pages.module.css';
-import pageStyles from './Page.module.css';
 import type {NewIndexGetter} from 'packages/sortable/dist';
+import type {Props as PageProps} from './Page';
+import {Layout, Page, Position} from './Page';
+import pageStyles from './Page.module.css';
+import styles from './Pages.module.css';
 
 interface Props {
   layout: Layout;

@@ -1,10 +1,10 @@
+import type {UniqueIdentifier} from '@thohui/dnd-kit-core';
+import {AnimateLayoutChanges, useSortable} from '@thohui/dnd-kit-sortable';
+import {CSS} from '@thohui/dnd-kit-utilities';
 import React, {CSSProperties} from 'react';
-import type {UniqueIdentifier} from '@dnd-kit/core';
-import {AnimateLayoutChanges, useSortable} from '@dnd-kit/sortable';
-import {CSS} from '@dnd-kit/utilities';
 
-import {TreeItem, Props as TreeItemProps} from './TreeItem';
 import {iOS} from '../../utilities';
+import {TreeItem, Props as TreeItemProps} from './TreeItem';
 
 interface Props extends TreeItemProps {
   id: UniqueIdentifier;

@@ -1,12 +1,12 @@
 {
-  "name": "@dnd-kit/utilities",
-  "version": "3.2.1",
+  "name": "@thohui/dnd-kit-utilities",
+  "version": "10.1.0",
   "description": "Internal utilities to bee shared between `@dnd-kit` packages",
   "author": "Claudéric Demers",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/clauderic/dnd-kit.git",
+    "url": "git+https://github.com/thohui/dnd-kit.git",
     "directory": "packages/utilities"
   },
   "scripts": {
@@ -17,7 +17,7 @@
     "prepublish": "npm run build"
   },
   "main": "dist/index.js",
-  "module": "dist/utilities.esm.js",
+  "module": "dist/dnd-kit-utilities.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "README.md",

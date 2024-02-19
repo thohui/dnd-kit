@@ -1,6 +1,6 @@
+import type {CancelDrop, UniqueIdentifier} from '@thohui/dnd-kit-core';
+import {rectSortingStrategy} from '@thohui/dnd-kit-sortable';
 import React from 'react';
-import type {CancelDrop, UniqueIdentifier} from '@dnd-kit/core';
-import {rectSortingStrategy} from '@dnd-kit/sortable';
 
 import {MultipleContainers, TRASH_ID} from './MultipleContainers';
 

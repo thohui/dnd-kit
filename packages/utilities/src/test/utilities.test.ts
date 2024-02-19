@@ -1,4 +1,4 @@
-describe('@dnd-kit/utilities', () => {
+describe('@thohui/dnd-kit-utilities', () => {
   it('works', () => {
     expect(true).toBe(true);
   });

@@ -1,6 +1,6 @@
-import React, {Profiler, useRef} from 'react';
-import {useDroppable, UniqueIdentifier} from '@dnd-kit/core';
+import {UniqueIdentifier, useDroppable} from '@thohui/dnd-kit-core';
 import classNames from 'classnames';
+import React, {Profiler, useRef} from 'react';
 
 import {droppable} from './droppable-svg';
 import styles from './Droppable.module.css';

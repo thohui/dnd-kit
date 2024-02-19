@@ -1,4 +1,4 @@
-import {useIsomorphicLayoutEffect} from '@dnd-kit/utilities';
+import {useIsomorphicLayoutEffect} from '@thohui/dnd-kit-utilities';
 
 import {scrollIntoViewIfNeeded} from '../../utilities/scroll';
 

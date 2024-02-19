@@ -3,27 +3,27 @@ import {createPortal} from 'react-dom';
 import VirtualList from 'react-tiny-virtual-list';
 
 import {
-  closestCenter,
   DndContext,
   DragOverlay,
-  PointerSensor,
   KeyboardSensor,
+  PointerSensor,
+  UniqueIdentifier,
+  closestCenter,
   useSensor,
   useSensors,
-  UniqueIdentifier,
-} from '@dnd-kit/core';
+} from '@thohui/dnd-kit-core';
 import {
+  SortableContext,
   arrayMove,
   sortableKeyboardCoordinates,
-  SortableContext,
   verticalListSortingStrategy,
-} from '@dnd-kit/sortable';
+} from '@thohui/dnd-kit-sortable';
 
 import styles from './Virtualized.module.css';
 
-import {createRange} from '../../utilities';
-import {SortableItem, Props} from './Sortable';
 import {Item, Wrapper} from '../../components';
+import {createRange} from '../../utilities';
+import {Props, SortableItem} from './Sortable';
 
 export default {
   title: 'Presets/Sortable/Virtualized',

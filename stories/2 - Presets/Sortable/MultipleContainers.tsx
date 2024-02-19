@@ -1,41 +1,41 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
-import {createPortal, unstable_batchedUpdates} from 'react-dom';
 import {
   CancelDrop,
-  closestCenter,
-  pointerWithin,
-  rectIntersection,
   CollisionDetection,
   DndContext,
   DragOverlay,
   DropAnimation,
-  getFirstCollision,
+  KeyboardCoordinateGetter,
   KeyboardSensor,
+  MeasuringStrategy,
+  Modifiers,
   MouseSensor,
   TouchSensor,
-  Modifiers,
-  useDroppable,
   UniqueIdentifier,
-  useSensors,
-  useSensor,
-  MeasuringStrategy,
-  KeyboardCoordinateGetter,
+  closestCenter,
   defaultDropAnimationSideEffects,
-} from '@dnd-kit/core';
+  getFirstCollision,
+  pointerWithin,
+  rectIntersection,
+  useDroppable,
+  useSensor,
+  useSensors,
+} from '@thohui/dnd-kit-core';
 import {
   AnimateLayoutChanges,
   SortableContext,
-  useSortable,
+  SortingStrategy,
   arrayMove,
   defaultAnimateLayoutChanges,
-  verticalListSortingStrategy,
-  SortingStrategy,
   horizontalListSortingStrategy,
-} from '@dnd-kit/sortable';
-import {CSS} from '@dnd-kit/utilities';
+  useSortable,
+  verticalListSortingStrategy,
+} from '@thohui/dnd-kit-sortable';
+import {CSS} from '@thohui/dnd-kit-utilities';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {createPortal, unstable_batchedUpdates} from 'react-dom';
 import {coordinateGetter as multipleContainersCoordinateGetter} from './multipleContainersKeyboardCoordinates';
 
-import {Item, Container, ContainerProps} from '../../components';
+import {Container, ContainerProps, Item} from '../../components';
 
 import {createRange} from '../../utilities';
 

@@ -1,4 +1,4 @@
-import {getWindow} from '@dnd-kit/utilities';
+import {getWindow} from '@thohui/dnd-kit-utilities';
 
 export function isScrollable(
   element: HTMLElement,

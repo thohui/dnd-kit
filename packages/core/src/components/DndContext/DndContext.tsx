@@ -1,6 +1,15 @@
+import type {Transform} from '@thohui/dnd-kit-utilities';
+import {
+  add,
+  getEventCoordinates,
+  getWindow,
+  useIsomorphicLayoutEffect,
+  useLatestValue,
+  useUniqueId,
+} from '@thohui/dnd-kit-utilities';
 import React, {
-  memo,
   createContext,
+  memo,
   useCallback,
   useEffect,
   useMemo,
@@ -9,26 +18,8 @@ import React, {
   useState,
 } from 'react';
 import {unstable_batchedUpdates} from 'react-dom';
-import {
-  add,
-  getEventCoordinates,
-  getWindow,
-  useLatestValue,
-  useIsomorphicLayoutEffect,
-  useUniqueId,
-} from '@dnd-kit/utilities';
-import type {Transform} from '@dnd-kit/utilities';
 
-import {
-  Action,
-  PublicContext,
-  InternalContext,
-  PublicContextDescriptor,
-  InternalContextDescriptor,
-  getInitialState,
-  reducer,
-} from '../../store';
-import {DndMonitorContext, useDndMonitorProvider} from '../DndMonitor';
+import type {AutoScrollOptions, SyntheticListener} from '../../hooks/utilities';
 import {
   useAutoScroller,
   useCombineActivators,
@@ -37,52 +28,61 @@ import {
   useRect,
   useRectDelta,
   useRects,
-  useScrollableAncestors,
   useScrollOffsets,
   useScrollOffsetsDelta,
+  useScrollableAncestors,
   useSensorSetup,
   useWindowRect,
 } from '../../hooks/utilities';
-import type {AutoScrollOptions, SyntheticListener} from '../../hooks/utilities';
+import {Modifiers, applyModifiers} from '../../modifiers';
 import type {
   Sensor,
+  SensorActivatorFunction,
   SensorContext,
   SensorDescriptor,
-  SensorActivatorFunction,
   SensorInstance,
 } from '../../sensors';
 import {
-  adjustScale,
+  Action,
+  InternalContext,
+  InternalContextDescriptor,
+  PublicContext,
+  PublicContextDescriptor,
+  getInitialState,
+  reducer,
+} from '../../store';
+import type {Active} from '../../store/types';
+import type {
+  DragCancelEvent,
+  DragEndEvent,
+  DragMoveEvent,
+  DragOverEvent,
+  DragStartEvent,
+  UniqueIdentifier,
+} from '../../types';
+import {
   CollisionDetection,
+  adjustScale,
   defaultCoordinates,
   getAdjustedRect,
   getFirstCollision,
   rectIntersection,
 } from '../../utilities';
-import {applyModifiers, Modifiers} from '../../modifiers';
-import type {Active} from '../../store/types';
-import type {
-  DragStartEvent,
-  DragCancelEvent,
-  DragEndEvent,
-  DragMoveEvent,
-  DragOverEvent,
-  UniqueIdentifier,
-} from '../../types';
 import {
   Accessibility,
   Announcements,
   RestoreFocus,
   ScreenReaderInstructions,
 } from '../Accessibility';
+import {DndMonitorContext, useDndMonitorProvider} from '../DndMonitor';
 
+import {createActiveAndOverAPI} from './activeAndOverAPI';
 import {defaultSensors} from './defaults';
 import {
   useLayoutShiftScrollCompensation,
   useMeasuringConfiguration,
 } from './hooks';
 import type {MeasuringConfiguration} from './types';
-import {createActiveAndOverAPI} from './activeAndOverAPI';
 import {useActiveNodeDomValues} from './useActiveNodeDomValues';
 
 export interface Props {

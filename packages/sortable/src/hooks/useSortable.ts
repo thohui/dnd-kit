@@ -1,12 +1,12 @@
-import {useContext, useEffect, useMemo, useRef} from 'react';
+import type {Data} from '@thohui/dnd-kit-core';
 import {
-  useDraggable,
-  useDroppable,
   UseDraggableArguments,
   UseDroppableArguments,
-} from '@dnd-kit/core';
-import type {Data} from '@dnd-kit/core';
-import {CSS, isKeyboardEvent, useCombinedRefs} from '@dnd-kit/utilities';
+  useDraggable,
+  useDroppable,
+} from '@thohui/dnd-kit-core';
+import {CSS, isKeyboardEvent, useCombinedRefs} from '@thohui/dnd-kit-utilities';
+import {useContext, useEffect, useMemo, useRef} from 'react';
 
 import {Context} from '../components';
 import type {Disabled, SortableData, SortingStrategy} from '../types';
